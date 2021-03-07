@@ -1,0 +1,19 @@
+/* Coolors Exported Palette - https://coolors.co/91c4f2-8ca0d7-9d79bc-a14da0-7e1f86 */
+
+/* CSS HEX */
+:root
+{
+  --baby-blue-eyes: #91c4f2ff;
+  --wild-blue-yonder: #8ca0d7ff;
+  --purple-mountain-majesty: #9d79bcff;
+  --purpureus: #a14da0ff;
+  --mardi-gras: #7e1f86ff;
+  --greyish: rgb(204, 204, 204);
+
+  /* CSS HSL */
+  --baby-blue-eyes: hsla(208, 79%, 76%, 1);
+  --wild-blue-yonder: hsla(224, 48%, 70%, 1);
+  --purple-mountain-majesty: hsla(272, 33%, 61%, 1);
+  --purpureus: hsla(301, 35%, 47%, 1);
+  --mardi-gras: hsla(295, 62%, 32%, 1);
+}

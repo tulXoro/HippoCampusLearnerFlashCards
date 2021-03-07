@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8"> <!--Title-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/hippo1.png" type="image/">
+  <title>HippoCampus Learner</title>
+</head>
+
+<header>
+	<div class="banner"> <!--Banner-->
+		<img draggable="false" class = "logo" src="assets/hippo2.png"><h2 class="title" style="font-family: Montserrat; font-weight: bold" >HippoCampus Learner</h2>
+	</div>
+</header>
+
+<body>
+  <div class="navbar-back" id="navigation">
+  <a draggable="false" class="nav-link active" href="/index.html">Home</a>
+  <a draggable="false" class="nav-link" href="#">Decks</a>
+  <a draggable="false" id="signin" class="nav-link" href="#">Account</a>
+  <a draggable="false" id="signin" class="nav-link" href="/howToUse.html">How To Use</a>
+  <a draggable="false" href="javascript:void(0);" class="icon" onclick="dropMenu()">
+    <img draggable="false" src="assets/menu.png" width="50px">
+  </a>
+</div>
+	<!-- <div class="navbar-back" id="navigation">
+		<nav class="navbar navbar-expand-sm">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Decks</a>
+				</li>
+				<li class="nav-item end">
+					<a id="signin" class="nav-link" href="#">Account</a>
+				</li>
+        <li class="nav-item end">
+					<a id="signin" class="nav-link" href="/howToUse.html">How To Use</a>
+				</li>
+        <li class="nav-item end">
+					
+          <a id="signin" class="nav-link icon" onclick="dropMenu()">
+            <i class="fa fa-bars"></i>
+          </a>
+				</li>
+			</ul>
+		</nav>
+	</div> -->
+	<div class="mainBody">
+    <!--
+	</div class="cardsLeft">
+	  <p id="cardsLeftText" style="font-family: Montserrat">Cards Left: </p>
+	</div>
+  -->
+  <div class="addRemove"> <!--Add and Remove Buttons-->
+    <button id="add" class = "add btn btn-pill btn-success" onclick="addCard()">Add</button>
+    <button id="remove" class = "remove btn btn-pill btn-danger" onclick="removeCard()">Remove</button>
+  </div>
+  <div class="center-grid">
+    <div class="grid-container">
+      <div onclick="changeCurrentCardLeft()" class="leftSide">
+        <div class="lArrow">
+          <p><</p><!-- &#8592 -->
+        </div>
+      </div>
+      <div class="card">
+        <div id="cardHead" class="cardHead card-header">
+          <p id="cardLabel" class="font-weight-light" style="font-family: Montserrat">Notecard</p>
+        </div>
+        <div id="cardContent" onclick="flipCard()" class="cardContent" style="font-family: Montserrat">test</div>
+      </div>
+      <div onclick="changeCurrentCardRight()" class="rightSide">
+        <div class="rArrow">
+          <p>></p><!--&#8594-->
+        </div>
+      </div>
+    </div>
+  </div>
+	<div class="options"> <!--Difficulty Buttons-->
+		<button onclick="tooEasy()" class = "easy btn btn-lg font-weight-light">Too Easy!</button>
+    <button onclick="gotIt()" class = "gotIt btn btn-lg font-weight-light">Got It!</button>
+    <button onclick="tooHard()" class = "hard btn btn-lg font-weight-light">Too Hard!</button>
+  </div>
+    <script src="script.js"></script>
+  </body>
+  
+</html>
