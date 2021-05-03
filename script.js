@@ -210,7 +210,64 @@ function deleteAllCookies() {
 }
 
 /** =======================================================
+ *  Import/Export
+ *  ======================================================= */
+
+function importCards() {
+  var input = document.createElement('input');
+  input.type = 'file';
+
+  input.onchange = e => { 
+
+    // getting a hold of the file reference
+    var file = e.target.files[0]; 
+
+    // setting up the reader
+    var reader = new FileReader();
+    reader.readAsText(file,'UTF-8');
+
+    // here we tell the reader what to do when it's done reading...
+    reader.onload = readerEvent => {
+      var content = readerEvent.target.result; // this is the content!
+      content = JSON.parse(content);
+
+      if(content.length) {
+        cards = content;
+        cardsEmpty=false;
+        currentCard = parseInt(getCookie("currentCard"));
+        createCookie("currentCard", currentCard);
+        currentCard = 0;
+      } else {
+        alert("Error, the file you gave us has no cards!");
+      }
+      
+      updateCardContent();
+    }
+
+  }
+
+  input.click();
+  
+}
+
+function exportCards() {
+  var element = document.createElement('a');
+  var json_str = JSON.stringify(cards);
+
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(json_str));
+  element.setAttribute('download', "Cards");
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
+/** =======================================================
  *  Web Operations
  *  ======================================================= */
 
 updateCardContent();
+
