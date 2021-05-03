@@ -214,39 +214,42 @@ function deleteAllCookies() {
  *  ======================================================= */
 
 function importCards() {
-  var input = document.createElement('input');
-  input.type = 'file';
-
-  input.onchange = e => { 
-
-    // getting a hold of the file reference
-    var file = e.target.files[0]; 
-
-    // setting up the reader
-    var reader = new FileReader();
-    reader.readAsText(file,'UTF-8');
-
-    // here we tell the reader what to do when it's done reading...
-    reader.onload = readerEvent => {
-      var content = readerEvent.target.result; // this is the content!
-      content = JSON.parse(content);
-
-      if(content.length) {
-        cards = content;
-        cardsEmpty=false;
-        currentCard = parseInt(getCookie("currentCard"));
-        createCookie("currentCard", currentCard);
-        currentCard = 0;
-      } else {
-        alert("Error, the file you gave us has no cards!");
+  if (confirm('Are you sure you want to import cards? WARNING: This will replace all your current cards if you haven\'t exported them')) {
+    var input = document.createElement('input');
+    input.type = 'file';
+  
+    input.onchange = e => { 
+  
+      // getting a hold of the file reference
+      var file = e.target.files[0]; 
+  
+      // setting up the reader
+      var reader = new FileReader();
+      reader.readAsText(file,'UTF-8');
+  
+      // here we tell the reader what to do when it's done reading...
+      reader.onload = readerEvent => {
+        var content = readerEvent.target.result; // this is the content!
+        content = JSON.parse(content);
+  
+        if(content.length) {
+          cards = content;
+          cardsEmpty=false;
+          currentCard = parseInt(getCookie("currentCard"));
+          createCookie("currentCard", currentCard);
+          currentCard = 0;
+        } else {
+          alert("Error, the file you gave us has no cards!");
+        }
+        
+        updateCardContent();
       }
-      
-      updateCardContent();
+  
     }
-
+  
+    input.click();
   }
 
-  input.click();
   
 }
 
