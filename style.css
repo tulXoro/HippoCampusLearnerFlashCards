@@ -226,12 +226,32 @@ header{
   font-family: 'Montserrat', sans-serif;
 }
 
-.addRemove{
+.cardButtons{
   display: flex;
   justify-content: center;
   position: relative;
-  left: 175px;
   font-family: 'Montserrat', sans-serif;
+}
+
+/*
+.importExport{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+*/
+
+button.import {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+button.export {
+  margin-right: 175px;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 button.add {
@@ -241,7 +261,6 @@ button.add {
 }
 
 button.remove {
-  margin-right: 5px;
   margin-bottom: 5px;
   margin-top: 10px;
 }
