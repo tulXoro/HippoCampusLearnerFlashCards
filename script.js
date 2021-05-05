@@ -257,7 +257,8 @@ function exportCards() {
   var element = document.createElement('a');
   var json_str = JSON.stringify(cards);
 
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(json_str));
+  // Don't scream, I just don't want users editing the text file without knowing what they're doing
+  element.setAttribute('href', 'data:file/plain;charset=utf-8,' + encodeURIComponent(json_str));
   element.setAttribute('download', "Cards");
 
   element.style.display = 'none';
