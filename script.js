@@ -214,7 +214,7 @@ function deleteAllCookies() {
  *  ======================================================= */
 
 function importCards() {
-  if (confirm('Are you sure you want to import cards? WARNING: This will replace all your current cards if you haven\'t exported them')) {
+  if (confirm('Are you sure you want to import cards? WARNING: This will replace all of your current cards if you haven\'t exported them')) {
     var input = document.createElement('input');
     input.type = 'file';
   
